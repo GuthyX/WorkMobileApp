@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 
 import com.example.workapp.R;
+import com.example.workapp.service.Service;
 
 public class MainActivity extends AppCompatActivity {
     Handler handler = new Handler();
@@ -21,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
                 finish();
             }
-        },5800
+        },4600
         );
     }
 }

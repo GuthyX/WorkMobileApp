@@ -8,6 +8,7 @@ import android.widget.TextView;
 import com.example.workapp.R;
 import com.example.workapp.model.Result;
 import com.example.workapp.service.Api;
+import com.example.workapp.service.Service;
 
 import java.util.List;
 
@@ -26,15 +27,8 @@ public class NextAct extends AppCompatActivity {
         setContentView(R.layout.activity_next);
 
         textViewResult = findViewById(R.id.text_view_result);
-
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://jsonplaceholder.typicode.com/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        Api api = retrofit.create(Api.class);
-
-        Call<List<Result>> call = api.getResults();
+        Service service = Service.getInstance();
+        Call<List<Result>> call = service.getList() ;
 
         call.enqueue(new Callback<List<Result>>() {
             @Override
@@ -45,16 +39,10 @@ public class NextAct extends AppCompatActivity {
                     }
                     List<Result> results = response.body();
                     for (Result res : results) {
-                        String content = "";
-                        content += "\n ID:"+ res.getId() ;
-                        content += "\n AlbumID: "+ res.getAlbumId();
-                        content += "\n Tittle" +res.getTitle();
-                        content += "\n ThubUrl:"+ res.getThumbnailUrl();
-
+                        String content = "\n Tittle:" +res.getTitle();
                         textViewResult.append(content);
                     }
             }
-
             @Override
             public void onFailure(Call<List<Result>> call, Throwable t) {
                 textViewResult.setText(t.getMessage());
