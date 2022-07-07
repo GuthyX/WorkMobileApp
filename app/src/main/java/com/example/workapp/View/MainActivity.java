@@ -1,10 +1,12 @@
-package com.example.workapp;
+package com.example.workapp.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+
+import com.example.workapp.R;
 
 public class MainActivity extends AppCompatActivity {
     Handler handler = new Handler();
@@ -15,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent i = new Intent(MainActivity.this,NextAct.class);
+                Intent i = new Intent(MainActivity.this, NextAct.class);
                 startActivity(i);
                 finish();
             }
