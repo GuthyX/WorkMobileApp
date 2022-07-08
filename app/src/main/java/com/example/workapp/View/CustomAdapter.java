@@ -57,7 +57,7 @@ public class CustomAdapter extends BaseAdapter {
         GlideUrl url = new GlideUrl(results.get(i).getThumbnailUrl(), new LazyHeaders.Builder()
                 .addHeader("User-Agent", "your-user-agent")
                 .build());
-        Glide.with(context).load(url).override(150, 150).into(imageView);
+        Glide.with(context).load(url).into(imageView);
         return view;
     }
 }

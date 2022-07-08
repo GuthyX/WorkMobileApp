@@ -1,7 +1,11 @@
 package com.example.workapp.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.Toast;
 import com.example.workapp.R;
@@ -27,6 +31,13 @@ public class MainActivity extends AppCompatActivity {
 
         getImages();
 
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+               startActivity(new Intent(MainActivity.this,DetailsActivity.class)
+                       .putExtra("data",results.get(i)));
+            }
+        });
 
     }
     public void getImages(){

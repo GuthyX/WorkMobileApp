@@ -1,5 +1,8 @@
 package com.example.workapp.model;
-public class Result {
+
+import java.io.Serializable;
+
+public class Result implements Serializable {
     private int albumId;
     private int id;
     private String title;
