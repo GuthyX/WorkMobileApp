@@ -6,14 +6,6 @@ public class Result {
     private String url;
     private String thumbnailUrl;
 
-    public Result(int albumId, int id, String title, String url, String thumbnailUrl) {
-        this.albumId = albumId;
-        this.id = id;
-        this.title = title;
-        this.url = url;
-        this.thumbnailUrl = thumbnailUrl;
-    }
-
     public int getAlbumId() {
         return albumId;
     }
