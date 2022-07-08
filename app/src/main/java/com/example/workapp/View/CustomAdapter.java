@@ -9,6 +9,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.model.GlideUrl;
+import com.bumptech.glide.load.model.LazyHeaders;
 import com.example.workapp.R;
 import com.example.workapp.model.Result;
 
@@ -52,8 +54,10 @@ public class CustomAdapter extends BaseAdapter {
         System.out.println(results.get(i).getTitle());
         System.out.println(results.get(i).getThumbnailUrl());
         textView.setText(results.get(i).getTitle());
-        String url = results.get(i).getThumbnailUrl();
-        Glide.with(context).load(url).override(300, 200).into(imageView);
+        GlideUrl url = new GlideUrl(results.get(i).getThumbnailUrl(), new LazyHeaders.Builder()
+                .addHeader("User-Agent", "your-user-agent")
+                .build());
+        Glide.with(context).load(url).override(150, 150).into(imageView);
         return view;
     }
 }
