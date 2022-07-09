@@ -7,13 +7,15 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".View.MainActivity"
+    android:background="@drawable/back"
     >
     <GridView
         android:id="@+id/gridView"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:horizontalSpacing="4dp"
-        android:verticalSpacing="4dp"
+        android:layout_gravity="center"
+        android:horizontalSpacing="40dp"
+        android:verticalSpacing="40dp"
         android:layout_margin="1dp"
        >
     </GridView>
