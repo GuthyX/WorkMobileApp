@@ -4,24 +4,28 @@
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:elevation="5dp"
+    android:id="@+id/myCardView"
     android:layout_margin="2dp"
-    app:cardElevation="5dp"
+    app:cardElevation="0dp"
     app:cardCornerRadius="4dp"
-    app:cardBackgroundColor="#fff"
     android:layout_height="match_parent"
-    android:background="@color/transparent">
+    app:cardBackgroundColor="@android:color/transparent">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints">
+        tools:ignore="MissingConstraints"
+       >
 
         <ImageView
             android:id="@+id/imageView"
+            android:paddingTop="20dp"
+            android:layout_marginBottom="20dp"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_centerHorizontal="true"
             android:scaleType="fitXY"
+
            />
 
         <TextView
@@ -30,8 +34,11 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/imageView"
             android:layout_centerHorizontal="true"
-            android:textSize="18dp"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
             android:textAlignment="center"
+
             android:text="Sample"
             />
 

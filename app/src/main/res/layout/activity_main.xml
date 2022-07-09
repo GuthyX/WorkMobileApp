@@ -12,10 +12,11 @@
     <GridView
         android:id="@+id/gridView"
         android:layout_width="300dp"
+        android:paddingTop="20dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:horizontalSpacing="40dp"
-        android:verticalSpacing="40dp"
+        android:verticalSpacing="20dp"
         android:layout_margin="1dp"
        >
     </GridView>
